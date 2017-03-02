@@ -14,21 +14,32 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".ActivityRegister" />
-        <activity android:name=".ActivityGoogleLogin" />
+        <activity android:name=".ActivityGoogleLogin"></activity>
         <activity android:name=".ActivityLoginEmailPass" />
         <activity android:name=".ActivityAccount" />
-        <activity android:name=".ActivityUsers"></activity>
+        <activity android:name=".ActivityUsers" />
         <activity android:name=".ActivityUsersUI" />
-        <activity android:name=".ActivityLoginFacebook">
+        <activity android:name=".ActivityLoginFacebook" />
+        <activity android:name=".ActivityFacebookUser" />
+        <activity android:name=".ActivityPushServer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityFacebookUser" />
-        <activity android:name=".ActivityPushNotifications" />
+        <!-- <activity android:name=".ActivityPushNotifications" /> -->
 
+
+        <!--
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        -->
         <service android:name=".FirebaseMessageingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -44,9 +55,13 @@
         <activity android:name=".ActivityCrash" />
         <activity android:name=".ActivityVideoRewarded" />
         <activity android:name=".ActivityAnonymous" />
-        <activity android:name=".ActivityDelete"></activity>
-        <activity android:name=".ActivitySort"></activity>
-        <activity android:name=".ActivityUIListAdapter"></activity>
+        <activity android:name=".ActivityDelete" />
+        <activity android:name=".ActivitySort" />
+        <activity android:name=".ActivityUIListAdapter" />
+        <activity android:name=".ActivityGoogleLogged" />
+        <activity android:name=".ActivityUpdateUser" />
+        <activity android:name=".ActivityRegisterAdvanced" />
+        <activity android:name=".ActivityDownloadFile"></activity>
     </application>
 
 </manifest>

@@ -33,16 +33,15 @@ public class ActivityGoogleLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /* TODO: Fix that, it does not work for the moment */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_login);
 
-        mAuth = FirebaseAuth.getInstance();
         googleBtn = (SignInButton) findViewById(R.id.btn_sign_google);
-        // Configure Google Sign In
+        mAuth = FirebaseAuth.getInstance();
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 // <string name="web_api_key">YOUR_API_KEY</string>
-                .requestIdToken(getResources().getString(R.string.web_api_key))
+                .requestIdToken(getResources().getString(R.string.web_client_id))
                 .requestEmail()
                 .build();
 
@@ -100,8 +99,10 @@ public class ActivityGoogleLogin extends AppCompatActivity {
                             Log.w(TAG, "signInWithCredential", task.getException());
                             Toast.makeText(ActivityGoogleLogin.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                        } else {
+                            startActivity(new Intent(ActivityGoogleLogin.this, ActivityGoogleLogged.class));
+                            Toast.makeText(ActivityGoogleLogin.this, "Logged Succesfully", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
     }

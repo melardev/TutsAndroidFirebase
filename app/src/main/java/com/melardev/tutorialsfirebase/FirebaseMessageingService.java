@@ -23,13 +23,13 @@ public class FirebaseMessageingService extends FirebaseMessagingService {
 
         String result = "From : " + remoteMessage.getFrom() + "\nMessageId = " + remoteMessage.getMessageId() + "\nMessageType =  " + remoteMessage.getMessageType()
                 + "\nCollapeseKey = " + remoteMessage.getCollapseKey() + "\nTo: " + remoteMessage.getTo() + "\nTtl = " + remoteMessage.getTtl()
-                + "\nSent Time = " + remoteMessage.getSentTime() + "\nTitle = " + remoteMessage.getNotification().getTitle()
-                + "\nBody = " + remoteMessage.getNotification().getBody();
+                + "\nSent Time = " + remoteMessage.getSentTime();/*+"\nTitle = " + remoteMessage.getNotification().getTitle()
+                + "\nBody = " + remoteMessage.getNotification().getBody()*/
         Map<String, String> map = remoteMessage.getData();
         for (String key : map.keySet())
             result += "\n(" + key + "," + map.get(key) + ")";
 
-        Intent intent = new Intent(this, ActivityPushNotifications.class);
+        Intent intent = new Intent(this, ActivityPushServer.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("result", result);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
