@@ -1,0 +1,89 @@
+{
+  "project_info": {
+    "project_number": "298314332699",
+    "firebase_url": "https://melardebug.firebaseio.com",
+    "project_id": "melardebug",
+    "storage_bucket": "melardebug.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298314332699:android:f68ff7187fe197c7",
+        "android_client_info": {
+          "package_name": "com.melardev.firebasetutorials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298314332699-c6kda9dovia4i6lrbioekgfih78k7f61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.melardev.firebasetutorials",
+            "certificate_hash": "0225FA6D00EAFC3FE98B39475410E3F30D4DBE40"
+          }
+        },
+        {
+          "client_id": "298314332699-jlllv0f21b0fj9jjv4pt86t0n29jagtk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv3k8c4KJtjSpnOVgMxMY1xjdAat7OIqA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298314332699:android:3fdc68652208d5a1",
+        "android_client_info": {
+          "package_name": "com.melardev.tutorialsfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298314332699-6b4trlgibuns9giuakgr06m9i9k8u9j6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.melardev.tutorialsfirebase",
+            "certificate_hash": "0225FA6D00EAFC3FE98B39475410E3F30D4DBE40"
+          }
+        },
+        {
+          "client_id": "298314332699-jlllv0f21b0fj9jjv4pt86t0n29jagtk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv3k8c4KJtjSpnOVgMxMY1xjdAat7OIqA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TutorialsFirebase</string>
+    <string name="web_api_key">298314332699-jlllv0f21b0fj9jjv4pt86t0n29jagtk.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1034125140043072</string>
+    <string name="app_id">ca-app-pub-1424004185102767~8159572932</string>
+    <string name="banner_aui">ca-app-pub-1424004185102767/9636306133</string>
+    <string name="intersticial_aui">ca-app-pub-1424004185102767/2113039330</string>
+    <string name="native_aui">ca-app-pub-1424004185102767/9496705333</string>
+    <string name="rewarded_aui">ca-app-pub-1424004185102767/6543238937</string>
+
+</resources>
