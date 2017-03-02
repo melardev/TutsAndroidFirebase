@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ActivityDownloadFile extends AppCompatActivity {
-
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,4 +144,5 @@ public class ActivityDownloadFile extends AppCompatActivity {
             });
         }
     }
+    */
 }

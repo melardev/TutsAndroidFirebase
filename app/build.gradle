@@ -44,6 +44,5 @@ dependencies {
     compile 'com.google.firebase:firebase-core:9.6.1'
     compile 'com.google.firebase:firebase-crash:9.6.1'
     compile 'com.firebaseui:firebase-ui-storage:0.6.0'
-    compile project(':adcolony')
 }
 apply plugin: 'com.google.gms.google-services'
