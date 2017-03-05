@@ -19,39 +19,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void registerDemo(View view) {
-        startActivity(new Intent(this, ActivityRegister.class));
+        startDemo(ActivityRegister.class);
     }
 
     public void loginDemo(View view) {
-        startActivity(new Intent(this, ActivityLoginEmailPass.class));
+        startDemo(ActivityLoginEmailPass.class);
     }
 
     public void manageAccount(View view) {
-        startActivity(new Intent(this, ActivityAccount.class));
+        startDemo(ActivityAccount.class);
     }
 
     public void adsDemo(View view) {
-        startActivity(new Intent(this, ActivityAds.class));
+        startDemo(ActivityAds.class);
     }
 
     public void iterateDbDemo(View view) {
-        startActivity(new Intent(this, ActivityUsers.class));
+        startDemo(ActivityUsers.class);
     }
 
     public void firebaseUIRecyclerDemo(View view) {
-        startActivity(new Intent(this, ActivityUsersUI.class));
-
+        startDemo(ActivityUsersUI.class);
     }
 
-    public void pushNotifDemo(View view) {
-        startActivity(new Intent(this, ActivityPushNotifications.class));
+    public void pushNotifConsoleDemo(View view) {
+        startDemo(ActivityPushNotifications.class);
+    }
+
+    public void pushNotifServer(View view) {
+        startDemo(ActivityPushServer.class);
     }
 
     public void facebookDemo(View view) {
-        startActivity(new Intent(this, ActivityLoginFacebook.class));
+        startDemo(ActivityLoginFacebook.class);
     }
 
     public void loginAnonymously(View view) {
-        startActivity(new Intent(this, ActivityAnonymous.class));
+        startDemo(ActivityAnonymous.class);
+    }
+
+    public void startDemo(Class className) {
+        startDemo(className);
     }
 }

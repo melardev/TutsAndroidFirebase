@@ -12,7 +12,13 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ActivityRegister" />
         <activity android:name=".ActivityGoogleLogin"></activity>
         <activity android:name=".ActivityLoginEmailPass" />
@@ -22,11 +28,7 @@
         <activity android:name=".ActivityLoginFacebook" />
         <activity android:name=".ActivityFacebookUser" />
         <activity android:name=".ActivityPushServer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- <activity android:name=".ActivityPushNotifications" /> -->
 
