@@ -1,7 +1,8 @@
-package com.melardev.tutorialsfirebase;
+package com.melardev.tutorialsfirebase.service;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.melardev.tutorialsfirebase.ActivityPushServer;
 
 
 import java.io.IOException;

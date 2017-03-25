@@ -79,33 +79,34 @@ public class ActivityUsers extends AppCompatActivity {
 
         //mDatabase.child("users").limitToFirst(2).addValueEventListener(new ValueEventListener() {
         //mDatabase.child("users").orderByChild("name").addValueEventListener(new ValueEventListener() {
-        mDatabase.child("users").orderByChild("name").equalTo("melardev").addValueEventListener(new ValueEventListener() {
-                                                                                                    //mDatabase.child("users").addValueEventListener(new ValueEventListener() {
-                                                                                                    @Override
-                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                                                                                        Iterator<DataSnapshot> items = dataSnapshot.getChildren().iterator();
-                                                                                                        Toast.makeText(ActivityUsers.this, "Total Users : " + dataSnapshot.getChildrenCount(), Toast.LENGTH_SHORT).show();
-                                                                                                        entries.clear();
-                                                                                                        while (items.hasNext()) {
-                                                                                                            DataSnapshot item = items.next();
+        mDatabase.child("users").orderByChild("name").equalTo("melardev").addValueEventListener(
+                new ValueEventListener() {
+                    //mDatabase.child("users").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Iterator<DataSnapshot> items = dataSnapshot.getChildren().iterator();
+                        Toast.makeText(ActivityUsers.this, "Total Users : " + dataSnapshot.getChildrenCount(), Toast.LENGTH_SHORT).show();
+                        entries.clear();
+                        while (items.hasNext()) {
+                            DataSnapshot item = items.next();
 
-                                                                                                            String name, image;
-                                                                                                            name = item.child("name").getValue().toString();
-                                                                                                            image = item.child("image").getValue().toString();
-                                                                                                            UserDB entry = new UserDB(name, image);
-                                                                                                            entries.add(entry);
-                                                                                                        }
+                            String name, image;
+                            name = item.child("name").getValue().toString();
+                            image = item.child("image").getValue().toString();
+                            UserDB entry = new UserDB(name, image);
+                            entries.add(entry);
+                        }
 
-                                                                                                        recyclerview.setAdapter(new RecUsersAdapter(ActivityUsers.this, entries));
-                                                                                                        recyclerview.getAdapter().notifyDataSetChanged();
-                                                                                                        mDatabase.child("users").removeEventListener(this);
-                                                                                                    }
+                        recyclerview.setAdapter(new RecUsersAdapter(ActivityUsers.this, entries));
+                        recyclerview.getAdapter().notifyDataSetChanged();
+                        mDatabase.child("users").removeEventListener(this);
+                    }
 
-                                                                                                    @Override
-                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-                                                                                                    }
-                                                                                                }
+                    }
+                }
 
         );
     }

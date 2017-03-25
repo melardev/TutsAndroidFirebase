@@ -28,23 +28,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-
-    compile 'com.google.firebase:firebase-core:10.2.0'
-    compile 'com.google.firebase:firebase-auth:10.2.0'
-    compile 'com.google.firebase:firebase-database:10.2.0'
-    compile 'com.google.firebase:firebase-storage:10.2.0'
-    compile 'com.google.android.gms:play-services-auth:10.2.0'
-    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    compile 'com.google.firebase:firebase-messaging:10.2.0'
-    compile 'com.google.firebase:firebase-ads:10.2.0'
-    compile 'com.google.firebase:firebase-crash:10.2.0'
-    compile 'com.firebaseui:firebase-ui-storage:1.1.0'
-    compile 'com.firebaseui:firebase-ui-database:1.1.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
 
     /* Old
     compile 'com.android.support:appcompat-v7:24.2.1'
@@ -64,5 +47,22 @@ dependencies {
     compile 'com.google.firebase:firebase-crash:9.6.1'
     compile 'com.firebaseui:firebase-ui-storage:0.6.0'
 */
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.google.firebase:firebase-core:10.2.0'
+    compile 'com.google.firebase:firebase-auth:10.2.0'
+    compile 'com.google.firebase:firebase-database:10.2.0'
+    compile 'com.google.firebase:firebase-storage:10.2.0'
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
+    compile 'com.google.firebase:firebase-ads:10.2.0'
+    compile 'com.google.firebase:firebase-crash:10.2.0'
+    compile 'com.firebaseui:firebase-ui-storage:1.1.0'
+    compile 'com.firebaseui:firebase-ui-database:1.1.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

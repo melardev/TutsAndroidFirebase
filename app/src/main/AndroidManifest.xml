@@ -20,16 +20,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityRegister" />
-        <activity android:name=".ActivityGoogleLogin"></activity>
+        <activity android:name=".ActivityGoogleLogin" />
         <activity android:name=".ActivityLoginEmailPass" />
         <activity android:name=".ActivityAccount" />
         <activity android:name=".ActivityUsers" />
         <activity android:name=".ActivityUsersUI" />
         <activity android:name=".ActivityLoginFacebook" />
         <activity android:name=".ActivityFacebookUser" />
-        <activity android:name=".ActivityPushServer">
-
-        </activity>
+        <activity android:name=".ActivityPushServer"></activity>
         <!-- <activity android:name=".ActivityPushNotifications" /> -->
 
 
@@ -42,12 +40,12 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
         -->
-        <service android:name=".FirebaseMessageingService">
+        <service android:name=".service.FirebaseMessageingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".FirebaseInstanceIDService">
+        <service android:name=".service.FirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
@@ -63,7 +61,8 @@
         <activity android:name=".ActivityGoogleLogged" />
         <activity android:name=".ActivityUpdateUser" />
         <activity android:name=".ActivityRegisterAdvanced" />
-        <activity android:name=".ActivityDownloadFile"></activity>
+        <activity android:name=".ActivityDownloadFile" />
+        <activity android:name=".ActivityDBRetriever"></activity>
     </application>
 
 </manifest>

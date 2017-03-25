@@ -61,4 +61,8 @@ public class MainActivity extends AppCompatActivity {
     public void startDemo(Class className) {
         startActivity(new Intent(this,className));
     }
+
+    public void dbObjMap(View view) {
+        startDemo(ActivityDBRetriever.class);
+    }
 }

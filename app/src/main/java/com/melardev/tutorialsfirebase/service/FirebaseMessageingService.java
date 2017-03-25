@@ -1,4 +1,4 @@
-package com.melardev.tutorialsfirebase;
+package com.melardev.tutorialsfirebase.service;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.melardev.tutorialsfirebase.ActivityPushServer;
 
 import java.util.Map;
 
