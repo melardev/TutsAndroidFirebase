@@ -15,12 +15,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="updateUserProfile"
-            android:text="Update" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:onClick="deleteUser"
             android:text="Delete" />
 
@@ -37,6 +31,25 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/etxtNewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="new Display Name" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="updateUserProfile"
+            android:text="Update" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etxtNewEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -54,6 +67,7 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/etxtNewPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,9 +80,20 @@
             android:text="Update password" />
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="getUserProviderProfileInfo"
-        android:text="getInfo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="getUserProviderProfileInfo"
+            android:text="getInfo" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="signOut"
+            android:text="Sign Out" />
+    </LinearLayout>
 </LinearLayout>
