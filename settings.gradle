@@ -1,1 +1,1 @@
-include ':app', ':adcolony'
+include ':app'

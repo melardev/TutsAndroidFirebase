@@ -90,8 +90,7 @@ public class ActivityUpdateUser extends AppCompatActivity {
 
                 Toast.makeText(this, "id : " + providerId + ", uid : " + uid + " name: " + name
                         + " email : " + email + " " + photoUrl, Toast.LENGTH_SHORT).show();
-            }
-            ;
+            };
         }
     }
 
@@ -136,7 +135,7 @@ public class ActivityUpdateUser extends AppCompatActivity {
     }
 
     public void setUserPassword(View view) {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = mAuth.getCurrentUser();
         String newPassword = etxtNewPassword.getText().toString();
         if (TextUtils.isEmpty(newPassword))
             return;

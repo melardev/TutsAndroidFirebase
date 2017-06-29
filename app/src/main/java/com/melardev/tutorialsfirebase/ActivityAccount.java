@@ -27,7 +27,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+import com.yalantis.ucrop.UCrop;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
@@ -115,72 +120,95 @@ public class ActivityAccount extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == UCrop.RESULT_ERROR) {
+            Toast.makeText(this, "uCrop error", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (requestCode == UCrop.REQUEST_CROP) {
+            final Uri imgUri = UCrop.getOutput(data);
+            Toast.makeText(this, imgUri.getPath(), Toast.LENGTH_SHORT).show();
+            uploadImage(imgUri);
+            return;
+        }
+
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
 
-            if (mAuth.getCurrentUser() == null)
-                return;
-            progressDialog.setMessage("Uploading image...");
-            progressDialog.show();
-            final Uri uri = data.getData();
-            if (uri == null) {
+            final Uri sourceUri = data.getData();
+            if (sourceUri == null) {
                 progressDialog.dismiss();
                 return;
+            } else {
+                File tempCropped = new File(getCacheDir(), "tempImgCropped.png");
+                Uri destinationUri = Uri.fromFile(tempCropped);
+                UCrop.of(sourceUri, destinationUri)
+                        //.withAspectRatio(3, 2)
+                        //.withMaxResultSize(MAX_WIDTH, MAX_HEIGHT)
+                        .start(this);
             }
-            if (mAuth.getCurrentUser() == null)
-                return;
 
-            if (mStorage == null)
-                mStorage = FirebaseStorage.getInstance().getReference();
-            if (mDatabase == null)
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
+        }
 
-            final StorageReference filepath = mStorage.child("Photos").child(getRandomString());/*uri.getLastPathSegment()*/
-            final DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
-            currentUserDB.child("image").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    String image = dataSnapshot.getValue().toString();
+    }
 
-                    if (!image.equals("default") && !image.isEmpty()) {
-                        Task<Void> task = FirebaseStorage.getInstance().getReferenceFromUrl(image).delete();
-                        task.addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful())
-                                    Toast.makeText(ActivityAccount.this, "Deleted image succesfully", Toast.LENGTH_SHORT).show();
-                                else
-                                    Toast.makeText(ActivityAccount.this, "Deleted image failed", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
 
-                    currentUserDB.child("image").removeEventListener(this);
+    public void uploadImage(final Uri fileUri) {
+        if (mAuth.getCurrentUser() == null)
+            return;
 
-                    filepath.putFile(uri).addOnSuccessListener(ActivityAccount.this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        if (mStorage == null)
+            mStorage = FirebaseStorage.getInstance().getReference();
+        if (mDatabase == null)
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
+
+        final StorageReference filepath = mStorage.child("Photos").child(getRandomString());/*uri.getLastPathSegment()*/
+        final DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
+
+        progressDialog.setMessage("Uploading image...");
+        progressDialog.show();
+
+        currentUserDB.child("image").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String image = dataSnapshot.getValue().toString();
+
+                if (!image.equals("default") && !image.isEmpty()) {
+                    Task<Void> task = FirebaseStorage.getInstance().getReferenceFromUrl(image).delete();
+                    task.addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressDialog.dismiss();
-                            Uri downloadUri = taskSnapshot.getDownloadUrl();
-                            Toast.makeText(ActivityAccount.this, "Finished", Toast.LENGTH_SHORT).show();
-                            Picasso.with(ActivityAccount.this).load(uri).fit().centerCrop().into(imageProfile);
-                            DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
-                            currentUserDB.child("image").setValue(downloadUri.toString());
-                        }
-                    }).addOnFailureListener(ActivityAccount.this, new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressDialog.dismiss();
-                            Toast.makeText(ActivityAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful())
+                                Toast.makeText(ActivityAccount.this, "Deleted image succesfully", Toast.LENGTH_SHORT).show();
+                            else
+                                Toast.makeText(ActivityAccount.this, "Deleted image failed", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
+                currentUserDB.child("image").removeEventListener(this);
 
-                }
-            });
-        }
+                filepath.putFile(fileUri).addOnSuccessListener(ActivityAccount.this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        progressDialog.dismiss();
+                        Uri downloadUri = taskSnapshot.getDownloadUrl();
+                        Toast.makeText(ActivityAccount.this, "Finished", Toast.LENGTH_SHORT).show();
+                        Picasso.with(ActivityAccount.this).load(fileUri).fit().centerCrop().into(imageProfile);
+                        DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
+                        currentUserDB.child("image").setValue(downloadUri.toString());
+                    }
+                }).addOnFailureListener(ActivityAccount.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(ActivityAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
