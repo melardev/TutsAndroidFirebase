@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.melardev.tutorialsfirebase.ActivityPushServer">
+    tools:context="com.melardev.tutorialsfirebase.activities.ActivityPushNotificationsServer">
 
     <TextView
         android:id="@+id/txtResult"

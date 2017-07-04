@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.melardev.tutorialsfirebase.ActivityTwitterAuth">
+    tools:context="com.melardev.tutorialsfirebase.activities.ActivityTwitterAuth">
 
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:id="@+id/twitter_login_button"

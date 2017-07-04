@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.melardev.tutorialsfirebase.MainActivity">
+    tools:context="com.melardev.tutorialsfirebase.activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,73 +20,140 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/sign_up"
             android:onClick="registerDemo"
-            android:text="Register Demo" />
+            android:text="@string/register" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/email"
             android:onClick="loginDemo"
-            android:text="Login Demo" />
+            android:text="@string/login_with_email_and_pass" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/phone"
+            android:onClick="phoneNumber"
+            android:text="@string/login_with_phone_number" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/anonymous"
             android:onClick="loginAnonymously"
-            android:text="Login Anonymously" />
+            android:text="@string/login_anonymously" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="manageAccount"
-            android:text="Manage Account" />
+            android:drawableRight="@drawable/facebook"
+            android:onClick="facebookDemo"
+            android:text="@string/login_with_facebook" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/google"
+            android:onClick="googleLogin"
+            android:text="Login with Google" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/github"
+            android:onClick="loginGithub"
+            android:text="@string/login_with_github" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/profile"
+            android:onClick="viewProfile"
+            android:text="@string/view_my_profile" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/profile"
+            android:onClick="manageUser"
+            android:text="@string/manage_user" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/money"
             android:onClick="adsDemo"
-            android:text="Ads demo" />
+            android:text="@string/ads_demo" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/iterate"
             android:onClick="iterateDbDemo"
-            android:text="Iterate DB Demo" />
+            android:text="@string/iterate_firebase_database" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="firebaseUIRecyclerDemo"
-            android:text="Firebase UI RecyclerAdapter Demo" />
+            android:text="@string/firebase_ui_recycleradapter" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/console"
             android:onClick="pushNotifConsoleDemo"
-            android:text="Push Notifications Console" />
+            android:text="@string/push_notifications_from_console" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/server"
             android:onClick="pushNotifServer"
-            android:text="Push Notifications Server" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="facebookDemo"
-            android:text="Facebook Demo" />
+            android:text="@string/push_notifications_from_server" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="dbObjMap"
-            android:text="DB Obj and Map" />
+            android:text="@string/database_as_object_and_map" />
+
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="manageUser"
-            android:text="Manage User" />
+            android:drawableRight="@drawable/stopwatch"
+            android:onClick="monitoringTool"
+            android:text="@string/performance_monitoring_tool" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/analytics"
+            android:onClick="firebaseAnalytics"
+            android:text="@string/firebase_analytics" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/dynamic_link"
+            android:onClick="dynamicLink"
+            android:text="@string/dynamic_link" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/crash"
+            android:onClick="firebaseCrashReporter"
+            android:text="@string/firebase_crash" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/crashlytics"
+            android:onClick="fabricCrashlytics"
+            android:text="@string/crashlytics" />
     </LinearLayout>
 </ScrollView>

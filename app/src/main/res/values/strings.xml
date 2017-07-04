@@ -1,11 +1,39 @@
 <resources>
     <string name="app_name">TutorialsFirebase</string>
-    <string name="web_client_id">298314332699-jlllv0f21b0fj9jjv4pt86t0n29jagtk.apps.googleusercontent.com</string>
-    <string name="facebook_app_id">1034125140043072</string>
-    <string name="app_id">ca-app-pub-1424004185102767~8159572932</string>
-    <string name="banner_aui">ca-app-pub-1424004185102767/9636306133</string>
-    <string name="intersticial_aui">ca-app-pub-1424004185102767/2113039330</string>
-    <string name="native_aui">ca-app-pub-1424004185102767/9496705333</string>
-    <string name="rewarded_aui">ca-app-pub-1424004185102767/6543238937</string>
-
+    <string name="web_client_id" translatable="false">298314332699-jlllv0f21b0fj9jjv4pt86t0n29jagtk.apps.googleusercontent.com</string>
+    <string name="facebook_app_id" translatable="false">1034125140043072</string>
+    <string name="app_id" translatable="false">ca-app-pub-1424004185102767~8159572932</string>
+    <string name="banner_aui" translatable="false">ca-app-pub-1424004185102767/9636306133</string>
+    <string name="intersticial_aui" translatable="false">ca-app-pub-1424004185102767/2113039330</string>
+    <string name="native_aui" translatable="false">ca-app-pub-1424004185102767/9496705333</string>
+    <string name="rewarded_aui" translatable="false">ca-app-pub-1424004185102767/6543238937</string>
+    <string name="fabric_api_key" translatable="false">14e282be129295c3e68ce5913b111c78f7a67278</string>
+    <string name="phone_disclaimer">When you click the button to verify your phone number an SMS will be sent to you, rates may be applied to you</string>
+    <string name="register">Sign Up</string>
+    <string name="login_with_email_and_pass">Login with email and pass</string>
+    <string name="login_with_phone_number">Login With Phone Number</string>
+    <string name="login_anonymously">Login Anonymously</string>
+    <string name="login_with_github">Login With Github</string>
+    <string name="manage_account">Manage Account</string>
+    <string name="ads_demo" translatable="false">ADS Demo</string>
+    <string name="iterate_firebase_database">Iterate Firebase Database</string>
+    <string name="firebase_ui_recycleradapter" translatable="false">Firebase UI RecyclerAdapter</string>
+    <string name="push_notifications_from_console">Push Notifications From Console</string>
+    <string name="push_notifications_from_server">Push Notifications from Server</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="database_as_object_and_map">Database as object and Map</string>
+    <string name="manage_user">Manage User</string>
+    <string name="performance_monitoring_tool" translatable="false">Performance Monitoring tool</string>
+    <string name="firebase_analytics" translatable="false">Firebase Analytics</string>
+    <string name="dynamic_link" translatable="false">Dynamic Link</string>
+    <string name="crashlytics" translatable="false">Crashlytics</string>
+    <string name="sign_in">sign In</string>
+    <string name="sign_out">signOut</string>
+    <string name="signed_in">signed In</string>
+    <string name="signed_out">signed Out</string>
+    <string name="firebase_crash" translatable="false">Firebase Crash</string>
+    <string name="signed_success">signed in succesfully</string>
+    <string name="sign_credential_fail">failed to sign in with credential</string>
+    <string name="now_logged_in">Now you are logged In</string>
+    <string name="view_my_profile">view my profile</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>performance_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>msg_of_the_day</key>
+        <value>work hard today to get good(remote) results tomorrow</value>
+    </entry>
+</defaultsMap>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.melardev.tutorialsfirebase.activities.ActivityInvites">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:text="Save 25% in your next purchase by sharing this app"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/btn_gift"
+        android:drawableRight="@drawable/gift"
+        android:onClick="inviteFriend"
+        android:padding="10dp"
+        android:text="Share and get 25% OFF  "
+        android:textColor="@android:color/white" />
+</RelativeLayout>

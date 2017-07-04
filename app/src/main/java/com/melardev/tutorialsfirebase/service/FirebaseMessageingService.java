@@ -2,15 +2,12 @@ package com.melardev.tutorialsfirebase.service;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Intent;
-import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.melardev.tutorialsfirebase.ActivityPushServer;
+import com.melardev.tutorialsfirebase.activities.ActivityPushNotificationsServer;
 
 import java.util.Map;
 
@@ -30,7 +27,7 @@ public class FirebaseMessageingService extends FirebaseMessagingService {
         for (String key : map.keySet())
             result += "\n(" + key + "," + map.get(key) + ")";
 
-        Intent intent = new Intent(this, ActivityPushServer.class);
+        Intent intent = new Intent(this, ActivityPushNotificationsServer.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("result", result);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

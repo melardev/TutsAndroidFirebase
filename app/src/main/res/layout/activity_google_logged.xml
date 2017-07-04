@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.melardev.tutorialsfirebase.ActivityGoogleLogged">
+    tools:context="com.melardev.tutorialsfirebase.activities.ActivityGoogleLogged">
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_sign_google"

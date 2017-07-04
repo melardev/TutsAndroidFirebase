@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register">Registro</string>
+    <string name="login_with_email_and_pass">Login con email y contraseña</string>
+    <string name="login_with_phone_number">Login con numero de telefono</string>
+    <string name="login_anonymously">Login anonimamente</string>
+    <string name="login_with_github">Login con Github</string>
+    <string name="manage_account">Editar mi perfil</string>
+    <string name="iterate_firebase_database">Iterar base de datos</string>
+    <string name="push_notifications_from_console">Push Notifications desde Consola</string>
+    <string name="push_notifications_from_server">Push Notifications desde servidor</string>
+    <string name="login_with_facebook">Login con Facebook</string>
+    <string name="database_as_object_and_map">Base de datos como objeto y Map</string>
+    <string name="manage_user">Editar mi perfil</string>
+    <string name="phone_disclaimer">Cuando pulsas el boton para verificar tu telefono se enviara un SMS, es posible que se apliquen tasas dependiendo de tu compañia o país.</string>
+    <string name="sign_in">Iniciar sesión</string>
+    <string name="signed_out">sesión cerrada</string>
+    <string name="app_name">TutorialesFirebase</string>
+    <string name="signed_in">Sesión iniciada</string>
+    <string name="sign_out">cerrar sesión</string>
+    <string name="view_my_profile">view my profile</string>
+</resources>

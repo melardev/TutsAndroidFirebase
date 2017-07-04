@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.melardev.tutorialsfirebase.ActivityRegister">
+    tools:context="com.melardev.tutorialsfirebase.activities.ActivityRegister">
 
     <EditText
         android:id="@+id/etxt_name"
