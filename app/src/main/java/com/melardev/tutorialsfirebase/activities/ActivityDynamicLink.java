@@ -8,16 +8,16 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.appinvite.AppInvite;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.appinvite.FirebaseAppInvite;
+import com.google.firebase.dynamiclinks.DynamicLink;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 import com.google.firebase.dynamiclinks.ShortDynamicLink;
@@ -27,17 +27,14 @@ public class ActivityDynamicLink extends AppCompatActivity {
 
     private final String TAG = getClass().getName();
     private FirebaseAnalytics analytics;
+    private TextView txtResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic_link);
 
-
-        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(AppInvite.API)
-                .build();
-
+        txtResult = (TextView) findViewById(R.id.txtDynamicLinkResult);
         FirebaseDynamicLinks.getInstance()
                 .getDynamicLink(getIntent())
                 .addOnSuccessListener(this, new OnSuccessListener<PendingDynamicLinkData>() {
@@ -48,14 +45,14 @@ public class ActivityDynamicLink extends AppCompatActivity {
                             analytics = FirebaseAnalytics.getInstance(ActivityDynamicLink.this);
 
                             Uri deepLink = pendingDynamicLinkData.getLink();
-                            Toast.makeText(ActivityDynamicLink.this, "onSuccess called " + deepLink.toString(), Toast.LENGTH_SHORT).show();
+                            txtResult.append("\nonSuccess called " + deepLink.toString());
                             //logic here, redeem code or whatever
 
                             FirebaseAppInvite invite = FirebaseAppInvite.getInvitation(pendingDynamicLinkData);
                             if (invite != null) {
                                 String invitationId = invite.getInvitationId();
                                 if (!TextUtils.isEmpty(invitationId))
-                                    Toast.makeText(ActivityDynamicLink.this, "invitation Id " + invitationId, Toast.LENGTH_SHORT).show();
+                                    txtResult.append("\ninvitation Id " + invitationId);
                             }
                         }
                     }
@@ -63,7 +60,7 @@ public class ActivityDynamicLink extends AppCompatActivity {
                 .addOnFailureListener(this, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ActivityDynamicLink.this, "onFailure", Toast.LENGTH_SHORT).show();
+                        txtResult.append("\nonFailure");
                     }
                 });
     }
@@ -124,7 +121,7 @@ public class ActivityDynamicLink extends AppCompatActivity {
 
                         } else {
                             // Error
-                            Toast.makeText(ActivityDynamicLink.this, "Error building short link", Toast.LENGTH_SHORT).show();
+                            txtResult.append("\nError building short link");
                         }
                     }
                 });

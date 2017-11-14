@@ -4,16 +4,28 @@ buildscript {
     repositories {
         jcenter()
         maven { url 'https://maven.fabric.io/public' }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.google.gms:google-services:3.1.0'
+        classpath('com.android.tools.build:gradle:3.0.0')
+                {
+                    exclude group: 'com.google.guava', module: 'guava-jdk5'
+                }
+        classpath('com.google.gms:google-services:3.1.0')
+                {
+                    exclude group: 'com.google.guava', module: 'guava-jdk5'
+                }
+        classpath ('com.google.firebase:firebase-plugins:1.1.0')
+                //remote, monitoring tool
+                // NOTE: Do not place your application dependencies here; they belong
+                // in the individual module build.gradle files
+                {
+                    exclude group: 'com.google.guava', module: 'guava-jdk5'
+                }
 
-        classpath 'com.google.firebase:firebase-plugins:1.1.0' //remote monitoring tool
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-
-        classpath 'io.fabric.tools:gradle:1.+'
+        classpath('io.fabric.tools:gradle:1.+') {
+            exclude group: 'com.google.guava', module: 'guava-jdk5'
+        }
     }
 }
 
@@ -28,4 +40,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    androidUiVersion = '26.1.0'
 }

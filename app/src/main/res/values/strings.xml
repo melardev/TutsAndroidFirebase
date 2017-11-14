@@ -36,4 +36,7 @@
     <string name="sign_credential_fail">failed to sign in with credential</string>
     <string name="now_logged_in">Now you are logged In</string>
     <string name="view_my_profile">view my profile</string>
+    <string name="consumer_key">R7FUNs5Xht749L03tgACuD43H</string>
+    <string name="consumer_secret">egWSgdBwfQr5n2duekArPcKyDsZmaxuLDOGaj0xDgpI6RcOkfQ</string>
+    <string name="login_ok_twitter">Signed in succesfully to Firebase with twitter Session</string>
 </resources>

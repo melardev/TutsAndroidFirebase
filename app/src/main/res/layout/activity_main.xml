@@ -62,6 +62,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/twitter"
+            android:onClick="twitterLogin"
+            android:text="Login with Twitter" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:drawableRight="@drawable/github"
             android:onClick="loginGithub"
             android:text="@string/login_with_github" />

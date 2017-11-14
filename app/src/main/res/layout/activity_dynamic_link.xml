@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.melardev.tutorialsfirebase.activities.ActivityDynamicLink">
 
+    <TextView
+        android:id="@+id/txtDynamicLinkResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:onClick="shareShortDynamicLink"
+        android:onClick="shareLongDynamicLink"
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_share" />

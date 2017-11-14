@@ -40,7 +40,7 @@ public class ActivityMonitoring extends AppCompatActivity {
         tracer.start();
         //load some data
         int value = random.nextInt(100);
-        if (value < 100)
+        if (value < 50)
             tracer.incrementCounter("load_data_fails");
         else
             tracer.incrementCounter("load_data_successes");

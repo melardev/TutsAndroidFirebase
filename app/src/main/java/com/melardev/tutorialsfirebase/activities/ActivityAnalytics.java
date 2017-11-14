@@ -32,9 +32,9 @@ public class ActivityAnalytics extends AppCompatActivity {
         String model = Build.MANUFACTURER + " - " + Build.MODEL;
         firebaseAnalytics.setMinimumSessionDuration(10 * 1000); //10seconds in this app before starting a session and collecting data
         firebaseAnalytics.setSessionTimeoutDuration(30 * 60 * 1000); //30 minutes of inactivity will lead to termination of this session
-        firebaseAnalytics.setUserProperty("osVersion", osVersion); //useless because the Firebase SDK already gives us this info.
-        firebaseAnalytics.setUserProperty("deviceModel", model); //useless because the Firebase SDK already gives us this info.
-        firebaseAnalytics.setUserProperty("nonExistingProperty", "whatWillHappen????"); //useless because the Firebase SDK already gives us this info.
+        firebaseAnalytics.setUserProperty("os_version_melar", osVersion); //useless because the Firebase SDK already gives us this info.
+        firebaseAnalytics.setUserProperty("device_model_lol", model); //useless because the Firebase SDK already gives us this info.
+        firebaseAnalytics.setUserProperty("non_existing_property", "whatWillHappen????"); //useless because the Firebase SDK already gives us this info.
 
     }
 

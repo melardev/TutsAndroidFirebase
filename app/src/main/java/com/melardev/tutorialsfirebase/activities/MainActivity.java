@@ -103,4 +103,8 @@ public class MainActivity extends AppCompatActivity {
     public void firebaseCrashReporter(View view) {
         startDemo(ActivityCrash.class);
     }
+
+    public void twitterLogin(View view) {
+        startDemo(ActivityTwitterAuth.class);
+    }
 }
